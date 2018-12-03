@@ -14,7 +14,8 @@
         <div class="inner-container">
             <h1>Analyze Whatsapp Text</h1>
             <form action="/submit" class="file-form" method="POST" enctype="multipart/form-data">
-                <input type="file" name="text-file" accept=".txt">
+                <label for="file-input">Upload the exported Whatsapp conversation</label>
+                <input type="file" name="text-file" accept=".txt" id="file-input">
                 <input type="submit" value="Submit">
             </form>
         </div>
