@@ -15,9 +15,14 @@
             <h1>Analyze Whatsapp Text</h1>
             <form action="/submit" class="file-form" method="POST" enctype="multipart/form-data">
                 <label for="file-input">Upload the exported Whatsapp conversation</label>
-                <input type="file" name="text-file" accept=".txt" id="file-input">
+                <input type="file" name="text-file" accept=".txt" id="file-input" required=true>
                 <input type="submit" value="Submit">
             </form>
+            {% if error %}
+            <div class="error">
+                Sorry, the file could not be processed
+            </div>
+            {% endif %}
         </div>
     </div>
 </body>

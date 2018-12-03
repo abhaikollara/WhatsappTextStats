@@ -16,9 +16,13 @@ body{
 
 }
 
+.file-form{
+    margin-bottom: 20px;
+}
+
 .file-form input[type="file"]{
     display: block;
-    padding: 10px;
+    padding: 30px 10px;
 
 }
 
@@ -28,8 +32,16 @@ body{
     background: #1976D2;
     border: none;
     border-radius: 20px;
-    width: 30%;
+    width: 80px;
     color: #fff
+}
+
+.error{
+    padding: 10px ;
+    background: #ef5350;
+    border-radius: 15px;
+    width: 70%;
+    color: #fff;
 }
 
 li{

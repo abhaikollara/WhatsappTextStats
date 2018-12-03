@@ -23,14 +23,17 @@ def get_data(f):
 
 @app.route("/")
 def hello():
-    return render_template("index.html")
+    return render_template("index.html", error=False)
 
 
 @app.route("/submit", methods=["POST"])
 def get_file():
     f = request.files["text-file"]
-    data = get_data(f)
-    return render_template("analysis.html", data=data)
+    try:
+        data = get_data(f)
+        return render_template("analysis.html", data=data)
+    except:
+        return render_template("index.html", error=True)
 
 
 if __name__ == "__main__":
