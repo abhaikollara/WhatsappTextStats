@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Conversation with {{data.name}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static',filename='styles/style.css') }}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Conversation with {{data.name}}</h1>
+        <h3>Message counts</h3>
+        <ul>
+            {% for person in data.message_counts %}
+            <li>{{person}} : {{data.message_counts[person]}}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Message Rate</h3>
+        <ul>
+            <li>{{data.message_rate_day}} messages per day</li>
+            <li>{{data.message_rate_hour}} messages per hour</li>
+        </ul>
+
+        <h3>Time Composition</h3>
+        <canvas id="myChart"></canvas>
+
+    </div>
+</body>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ["Midnight", "1 AM", "2 AM", "3 AM", "4 AM", "5 AM", "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "Noon", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM", "10 PM", "11 PM"],
+            datasets: [{
+                label: "Number of messages",
+                backgroundColor: 'rgb(25,118,210)',
+                borderColor: 'rgb(13,71,161)',
+                data: {{ data.time_comp }},
+    }]
+        },
+
+    // Configuration options go here
+    options: { }
+    });
+</script>
+
+</html>

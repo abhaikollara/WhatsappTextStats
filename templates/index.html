@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static',filename='styles/style.css') }}" />
+    <title>Whatsapp Textalyzer</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <h1>Analyze Whatsapp Text</h1>
+            <form action="/submit" class="file-form" method="POST" enctype="multipart/form-data">
+                <input type="file" name="text-file" accept=".txt">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
