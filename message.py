@@ -53,8 +53,9 @@ class Message(object):
             "added",
             "deleted",
             "encryption",
-            "changed",
+            "created",
             "security code",
+            "joined",
             "left",
         ]
 
