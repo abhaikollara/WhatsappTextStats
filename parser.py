@@ -12,11 +12,11 @@ def _is_next_message(raw_message):
 
 
 def parse_file(f):
-    raw_data = [str(x, encoding="utf-8") for x in f.readlines()]
+    raw_data = (str(x, encoding="utf-8") for x in f.readlines())
     name = f.filename.split("with ")[1].split(".txt")[0]
     conversation = Conversation(name)
-    buffer = raw_data[0]
-    for line in raw_data[1:]:
+    buffer = next(raw_data)
+    for line in raw_data:
         if _is_next_message(line):
             conversation.add_raw_message(buffer.rstrip())
             buffer = line
