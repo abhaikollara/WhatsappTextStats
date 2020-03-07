@@ -12,7 +12,4 @@ Run
 
 and then open `localhost:5000` in your browser. Upload the exported Whatsapp chat and click Submit.
 
-### Exporting Whatsapp Chat
-- Tap the conversation you want to export to open it
-- In the options (three dots) choose more and then export chat
-- Select where to share you chat text file
+- [Exporting Chat history in Whatsapp](https://faq.whatsapp.com/en/android/23756533/?category=5245251)
