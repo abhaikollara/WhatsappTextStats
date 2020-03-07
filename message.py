@@ -31,14 +31,14 @@ class Message(object):
         self._message = raw_message.split(": ", 1)[-1]
         self._sender = Person(self._handle_sender_info(raw_message))
         self._timestamp = datetime.strptime(
-            raw_message.split(" - ", 1)[0], "%d/%m/%y, %I:%M %p"
+            raw_message.split(" - ", 1)[0], "%m/%d/%y, %I:%M %p"
         )
         self._is_media = self._message == "<Media omitted>"
 
     @staticmethod
     def _is_message_valid(raw_message):
         try:
-            datetime.strptime(raw_message.split(" - ")[0], "%d/%m/%y, %I:%M %p")
+            datetime.strptime(raw_message.split(" - ")[0], "%m/%d/%y, %I:%M %p")
         except ValueError:
             return False
 
