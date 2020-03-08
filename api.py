@@ -32,8 +32,9 @@ def get_file():
     try:
         data = get_data(f)
         return render_template("analysis.html", data=data)
-    except:
-        return render_template("index.html", error=True)
+    except Exception as e:
+        err = str(e)
+        return render_template("index.html", error=err)
 
 
 if __name__ == "__main__":

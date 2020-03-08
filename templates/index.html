@@ -20,7 +20,10 @@
             </form>
             {% if error %}
             <div class="error">
-                Sorry, the file could not be processed
+                Sorry, the file could not be processed due to the following error
+                <div class="error-msg">
+                    {{error}}
+                </div>
             </div>
             {% endif %}
         </div>
