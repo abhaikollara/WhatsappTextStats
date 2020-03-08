@@ -3,8 +3,10 @@ A simple utility in Python to get statistics on your Whatsapp conversation
 
 
 ## Requirements
- - Python > 3
- - Flask
+Python 3
+
+## Installation
+`pip install -r requirements.txt`
 
 ## Usage
 Run
