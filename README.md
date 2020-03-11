@@ -5,6 +5,8 @@ A simple utility in Python to get statistics on your Whatsapp conversation
 ## Requirements
 Python 3
 
+`Currently only supports dd/mm/yy date format and 12hr time format`
+
 ## Installation
 `pip install -r requirements.txt`
 
